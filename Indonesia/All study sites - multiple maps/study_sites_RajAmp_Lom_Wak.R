@@ -95,7 +95,7 @@ map.plot
 lombok <- coord %>% filter(region == "Lombok")
 
 # Plot Lombok without sites
-map <- get_map(location=c(116.2, -8.6), zoom="auto",
+map <- get_map(location=c(116.3, -8.6), zoom=10,
                source= "stamen", maptype="toner-background", crop=FALSE)
 map.plot <- ggmap(map) +
   labs(x="Longitude", y="Latitude") +
@@ -103,8 +103,8 @@ map.plot <- ggmap(map) +
 map.plot
 
 # Plot Lombok with sites
-map <- get_map(location=c(116.3, -8.6), zoom="auto",
-               source= "stamen", maptype="toner-background", crop=TRUE)
+map <- get_map(location=c(116.3, -8.6), zoom=10,
+               source= "stamen", maptype="toner-background", crop=FALSE)
 map.plot <- ggmap(map) +
   geom_point(data=lombok, aes(x=lon, y=lat), size=2, colour="red") +
   labs(x="Longitude", y="Latitude") +
