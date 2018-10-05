@@ -20,13 +20,34 @@ library(mapdata)
 #____________________________________________________________________________________________________________________
 #### Louisiana State Map ####
 #____________________________________________________________________________________________________________________
-states <- map_data("states")
-la_df <- subset(states, region == "louisiana")
-# ggplot() + geom_polygon(data = LA, aes(x=long, y = lat))
+# Store state data
+state <- map_data("state")
+la_df <- subset(state, region == "louisiana")
 
-la_base <- ggplot(data=)
+# Store county data
+counties <- map_data("county")
+la_county <- subset(counties, region == "louisiana")
 
-ca_base <- ggplot(data = ca_df, mapping = aes(x = long, y = lat, group = group)) + 
-  coord_fixed(1.3) + 
-  geom_polygon(color = "black", fill = "gray")
-ca_base + theme_nothing()
+# Create base map of Louisiana
+la_base <- ggplot(data=la_df, mapping=aes(x=long, y=lat)) +
+  coord_fixed(1.3) +
+  geom_polygon(color = "black", fill = "white")
+
+# Plot map with counties
+la_base + theme_nothing() +
+  geom_polygon(data = la_county, fill = NA, color = "white") +
+
+
+
+geom_polygon(data = ca_county, fill = NA, color = "white") +
+  geom_polygon(color = "black", fill = NA)  # get the state border back on top
+
+
+
+
+
+
+
+
+
+
