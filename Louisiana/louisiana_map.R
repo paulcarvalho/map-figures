@@ -41,7 +41,12 @@ la_base + theme_nothing() +
   geom_polygon(color = "black", fill = NA)  # get the state border back on top
 
 
-
+#____________________________________________________________________________________________________________________
+#### Terrebonne Parish Map ####
+#____________________________________________________________________________________________________________________
+# Zoomed in map of Terrebonne Parish
+map <- get_map(location=c(lon=-90, lat=30), maptype="terrain", source="google", zoom="auto")
+ggmap(map)
 
 
 
