@@ -45,8 +45,9 @@ la_base + theme_nothing() +
 #### Terrebonne Parish Map ####
 #____________________________________________________________________________________________________________________
 # Zoomed in map of Terrebonne Parish
-map <- get_map(location=c(lon=-90, lat=30), maptype="terrain", source="google", zoom="auto")
-ggmap(map)
+terre_location <- c(left=-91.3, bottom=29.0, right=-90.3, top=29.8)
+map1 <- get_stamenmap(bbox=terre_location, maptype="toner-background", crop=FALSE)
+ggmap(map1)
 
 
 
