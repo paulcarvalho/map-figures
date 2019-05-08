@@ -20,3 +20,4 @@ library(mapdata)
 map      <- get_map(location=c(lon=118, lat=0), zoom=4, maptype="toner-background", source="stamen")
 map.plot <- ggmap(map) + labs(x="", y="")
 map.plot
+  
